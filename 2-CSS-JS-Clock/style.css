@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(images/gades-photography-761364-unsplash.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid white;
+    border-radius: 50%;
+    margin: 10px auto;
+    position: relative;
+    /*padding: 2rem;*/
+    box-shadow:
+      0 0 0 4px rgba(0,0,0,0.1),
+      inset 0 0 0 3px #EFEFEF,
+      inset 0 0 10px black,
+      0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
+  }
+
+  .hand {
+    width: 50%;
+    height: 6px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s ease-in-out;
+  }
+
+  .num {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold; 
+  }
+
+  .twelve {
+      position: absolute;
+      top: 2%;
+      left: 47%;
+  }
+  .three {
+      position: absolute;
+      top: 47%;
+      left: 95%;
+  }
+
+  .six {
+      position: absolute;
+      top: 93%;
+      left: 47%;
+  }
+
+  .nine {
+      position: absolute;
+      left: 5%;
+      top: 47%;
+  }
+
