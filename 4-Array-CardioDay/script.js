@@ -119,11 +119,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
           // 5. Sort the inventors by years lived
+
+          btn5.addEventListener('click', function() {
+              let yearsLived = inventors.sort(function(x, y) {
+                  let last = x.passed - x.year;
+                  let next = y.passed - y.year;
+                  if(last > next) {
+                      return -1
+                  } else {
+                      return 1
+                  }
+              })
+
+              console.table(yearsLived)
+          })
           // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
           // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+          
+           /* const category = document.querySelector('.mw-category');
+            const links = Array.from(category.querySelectorAll('a'));
+            const de = links
+                            .map(link => link.textContent)
+                            .filter(streetName => streetName.includes("de"));
+
+          //w konsoli na ww stronie*/
+         
+          
+
+
           // 7. sort Exercise
           // Sort the people alphabetically by last name
+          btn7.addEventListener('click', function() {
+              const peop = people.sort(function(last, next){
+                const [aLast, aNext] = last.split(", ");
+                const [bLast, bNext] = next.split(", ")
+
+                return aLast > bLast ? 1 : -1;
+              })
+
+              console.log(peop)
+
+              
+          })
+
           // 8. Reduce Exercise
           // Sum up the instances of each of these
-          const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+          btn8.addEventListener('click', function() {
+            const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 
+            'car', 'truck' ];
+  
+            const transport = data.reduce(function(obj, item) {
+                if(!obj[item]) {
+                    obj[item] = 0;
+                }
+                obj[item]++;
+                return obj;
+              }, {});
+
+              console.log(transport)
+          })
+          
+          
 })
